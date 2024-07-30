@@ -144,3 +144,28 @@ export const updateEmployeectrl = async(req,res)=>{
             })
         }
     }
+
+    // search 
+
+      export const  searchController =  async(req,res)=>{
+      try {
+         const {keyword} =  req.params
+         
+         const result  =  await employeeModel.find({
+            $or:[
+                {name:{$regex:keyword,$options:'i'}},
+                {email:{$regex:keyword,$options:'i'}}
+            ]
+         })
+         res.status(200).send(result)
+    
+      } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'error in searchctrl',
+            error:error.message
+        })
+        
+      }
+    }

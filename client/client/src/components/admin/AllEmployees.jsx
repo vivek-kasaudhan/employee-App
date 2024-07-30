@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Layout from '../layout/Layout';
 import { useNavigate } from 'react-router-dom';
+import SearchInput from '../search/SearchInput';
 
 const AllEmployees = () => {
   const [employees, setEmployees] = useState([]);
@@ -50,8 +51,12 @@ const AllEmployees = () => {
   return (
     <Layout>
       <h1>All Employees</h1>
+      <SearchInput/>
+      <div style={{border:'1px solid black', padding:'20px 0px'}}>
       <table className="table">
+    
         <thead>
+          
           <tr>
             <th>Name</th>
             <th>Email</th>
@@ -87,6 +92,7 @@ const AllEmployees = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </Layout>
   );
 };

@@ -14,6 +14,8 @@ import UpdateEmployee from './components/admin/UpdateEmployee'
 import EmployeeList from './components/admin/EmployeeList'
 import AllEmployees from './components/admin/AllEmployees'
 
+import Search from './pages/Search'
+
 function App() {
  
 
@@ -33,7 +35,9 @@ function App() {
            <Route path='admin/update-employee/:id'element ={<UpdateEmployee/>}/>
            <Route path='admin/get-all-employee' element={<AllEmployees/>}/>
            <Route path='admin/employees'element ={<EmployeeList/>}/>
+           <Route path='admin/search'element = {<Search/>}/>
         </Route>
+        <Route path='/search'element = {<Search/>}/>
 
       </Routes>
     </>
